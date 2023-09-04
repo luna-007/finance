@@ -1,10 +1,11 @@
 import pandas as pd
+import numpy as np
 import yfinance as yf
 import matplotlib.pyplot as plt
 
 gold = yf.Ticker('GC=F')
 
-data = gold.history('1y')
+data = gold.history('5y')
 
 data['SMA_60'] = data.iloc[:,1].rolling(window=60).mean()
 
